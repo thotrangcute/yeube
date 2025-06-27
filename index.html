@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iu hônggg?</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        text-align: center;
+        background: #fff0f0;
+        margin: 0;
+        padding: 50px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      #cat {
+        width: 120px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+      }
+
+      h2 {
+        margin-bottom: 40px;
+        font-size: 24px;
+        color: #333;
+        transition: all 0.3s ease;
+      }
+
+      .yes-btn {
+        padding: 20px 40px;
+        font-size: 24px;
+        background-color: #ec7f7f;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.5s ease;
+        z-index: 1;
+      }
+
+      /* Đưa ra khỏi .buttons để không bị che */
+      .no-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        background-color: #4682b4;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        position: absolute;
+        top: 60%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+        transition: all 0.2s ease;
+        cursor: pointer;
+        z-index: 10;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="https://i.imgur.com/IaUrttj.png" alt="cute-cat" id="cat" />
+    <h2 id="question">bé hiền iu ơi , bé có iu me hônggg</h2>
+
+    <div class="buttons">
+      <button class="yes-btn" onclick="onYesClick()">Có</button>
+    </div>
+
+    <button class="no-btn" id="noBtn">Không được đâu :(</button>
+
+    <script>
+      const noBtn = document.getElementById("noBtn");
+      const catImg = document.getElementById("cat");
+      const question = document.getElementById("question");
+
+      noBtn.addEventListener("mouseenter", () => {
+        const maxX = window.innerWidth - noBtn.offsetWidth;
+        const maxY = window.innerHeight - noBtn.offsetHeight;
+        const newX = Math.random() * maxX;
+        const newY = Math.random() * maxY;
+        noBtn.style.left = `${newX}px`;
+        noBtn.style.top = `${newY}px`;
+        noBtn.innerText = "Không được đâu :(";
+        catImg.src = "https://i.imgur.com/MT4d3xP.png";
+      });
+
+      function onYesClick() {
+        noBtn.classList.add("hidden");
+        catImg.classList.add("hidden");
+        question.classList.add("hidden");
+
+        const yesBtn = document.querySelector(".yes-btn");
+        yesBtn.style.transform = "scale(3)";
+        yesBtn.innerText = "IU NHIỀU LẮMMM 💖";
+      }
+    </script>
+  </body>
+</html>
