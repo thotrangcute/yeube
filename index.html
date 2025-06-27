@@ -16,7 +16,7 @@
       }
 
       #cat {
-        width: 120px;
+        width: 160px;
         margin-bottom: 20px;
         transition: all 0.3s ease;
       }
@@ -94,8 +94,9 @@
     </style>
   </head>
   <body>
-    <img src="https://i.imgur.com/IaUrttj.png" alt="cute-cat" id="cat" />
-    <h2 id="question">Trang ơi, cậu có iu tôi hônggg</h2>
+    <!-- Ảnh mèo dễ thương hơn -->
+    <img src="https://i.imgur.com/Z6z8nlg.png" alt="cute-cat" id="cat" />
+    <h2 id="question">bé hiền ơi, bé có iu tôi hônggg</h2>
 
     <div class="buttons">
       <button class="yes-btn" onclick="onYesClick()">Có</button>
@@ -116,13 +117,13 @@
         noBtn.style.left = `${newX}px`;
         noBtn.style.top = `${newY}px`;
         noBtn.innerText = "Không được đâu :(";
-        catImg.src = "https://i.imgur.com/MT4d3xP.png";
+        catImg.src = "https://i.imgur.com/6SZXwAV.png"; // Mèo buồn
       });
 
       function onYesClick() {
         noBtn.classList.add("hidden");
-        catImg.classList.add("hidden");
-        question.innerText = "Tui cũng iu Trang nhiềuuu 💖";
+        catImg.src = "https://i.imgur.com/QphPEu6.png"; // Mèo vui
+        question.innerText = "me cũng iu bé hiền nhiềuuu 💖";
         question.classList.add("shake");
         question.style.fontSize = "22px";
         question.style.marginTop = "30px";
